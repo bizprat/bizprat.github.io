@@ -3,9 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Prateek Anand - AI Engineer | Full-Stack Developer</title>
-    <!-- Bootstrap CSS (lightweight) -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <title>Prateek Anand - Developer</title>
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
     <style>
         * {
             margin: 0;
@@ -22,8 +21,8 @@
             padding: 20px;
         }
 
-        .terminal-container {
-            max-width: 1000px;
+        .container {
+            max-width: 800px;
             margin: 0 auto;
             background: rgba(0, 0, 0, 0.8);
             border: 1px solid #333;
@@ -46,15 +45,15 @@
             margin-right: 15px;
         }
 
-        .btn-circle {
+        .btn {
             width: 12px;
             height: 12px;
             border-radius: 50%;
         }
 
-        .btn-close { background: #ff5f56; }
-        .btn-minimize { background: #ffbd2e; }
-        .btn-maximize { background: #27ca3f; }
+        .btn.close { background: #ff5f56; }
+        .btn.minimize { background: #ffbd2e; }
+        .btn.maximize { background: #27ca3f; }
 
         .terminal-title {
             color: #666;
@@ -96,43 +95,37 @@
             padding-left: 10px;
         }
 
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
         .info-card {
             background: rgba(0, 255, 65, 0.05);
             border: 1px solid #333;
             border-radius: 4px;
             padding: 20px;
-            height: 100%;
-            min-height: 180px;
         }
 
         .info-card h3 {
             color: #fff;
-            margin-bottom: 15px;
+            margin-bottom: 10px;
             font-size: 16px;
         }
 
         .contact-item {
             display: flex;
             align-items: center;
-            margin-bottom: 10px;
+            margin-bottom: 8px;
             color: #ccc;
         }
 
         .contact-item .label {
             min-width: 90px;
             color: #888;
-            margin-right: 10px;
             flex-shrink: 0;
-        }
-
-        .contact-item a {
-            color: #00ff41;
-            text-decoration: none;
-            word-break: break-word;
-        }
-
-        .contact-item a:hover {
-            color: #fff;
         }
 
         .links {
@@ -152,14 +145,12 @@
             text-decoration: none;
             transition: all 0.3s ease;
             font-size: 14px;
-            min-height: 44px;
         }
 
         .link:hover {
             background: rgba(0, 255, 65, 0.2);
             box-shadow: 0 0 10px rgba(0, 255, 65, 0.3);
             transform: translateY(-1px);
-            color: #00ff41;
         }
 
         .link::before {
@@ -170,7 +161,7 @@
         .skills {
             display: flex;
             flex-wrap: wrap;
-            gap: 8px;
+            gap: 10px;
         }
 
         .skill {
@@ -180,7 +171,6 @@
             border-radius: 3px;
             font-size: 12px;
             color: #ccc;
-            margin-bottom: 5px;
         }
 
         .footer {
@@ -202,14 +192,87 @@
             51%, 100% { opacity: 0; }
         }
 
-        /* Mobile optimizations */
-        @media (max-width: 576px) {
+        /* Tablet styles */
+        @media (max-width: 768px) and (min-width: 415px) {
+            .container {
+                max-width: 95%;
+                padding: 25px;
+                margin: 10px auto;
+            }
+            
+            h1 {
+                font-size: 28px;
+            }
+            
+            .role {
+                font-size: 16px;
+            }
+            
+            .info-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 15px;
+            }
+            
+            .links {
+                gap: 12px;
+            }
+            
+            .link {
+                flex: 1;
+                min-width: 120px;
+                justify-content: center;
+                text-align: center;
+            }
+            
+            .section h2 {
+                font-size: 18px;
+            }
+        }
+
+        /* iPhone and similar sized devices */
+        @media (max-width: 414px) {
+            .info-grid {
+                display: flex !important;
+                flex-direction: column !important;
+                gap: 15px;
+            }
+            
+            .info-card {
+                padding: 18px;
+                min-height: 160px;
+                width: 100%;
+            }
+            
+            .contact-item {
+                margin-bottom: 12px;
+            }
+            
+            .contact-item .label {
+                min-width: 75px;
+                margin-right: 12px;
+            }
+            
+            .skills {
+                gap: 6px;
+                line-height: 1.4;
+            }
+            
+            .skill {
+                font-size: 11px;
+                padding: 5px 8px;
+                margin-bottom: 4px;
+            }
+        }
+
+        /* Mobile styles */
+        @media (max-width: 480px) {
             body {
                 padding: 10px;
             }
             
-            .terminal-container {
+            .container {
                 padding: 20px 15px;
+                border-radius: 4px;
             }
             
             h1 {
@@ -218,22 +281,38 @@
             
             .role {
                 font-size: 14px;
+                margin-bottom: 25px;
+            }
+            
+            .terminal-header {
+                margin-bottom: 20px;
+                padding-bottom: 10px;
+            }
+            
+            .terminal-title {
+                font-size: 12px;
+            }
+            
+            .info-grid {
+                display: flex !important;
+                flex-direction: column !important;
+                gap: 15px;
             }
             
             .info-card {
-                min-height: 160px;
-                margin-bottom: 15px;
+                padding: 15px;
+                min-height: 150px;
+                width: 100%;
             }
             
             .contact-item {
-                flex-direction: column;
+                margin-bottom: 15px;
                 align-items: flex-start;
-                margin-bottom: 12px;
             }
             
             .contact-item .label {
-                margin-bottom: 4px;
-                margin-right: 0;
+                min-width: 80px;
+                margin-right: 15px;
             }
             
             .links {
@@ -242,85 +321,108 @@
             }
             
             .link {
+                padding: 12px 15px;
+                font-size: 14px;
                 justify-content: center;
                 text-align: center;
             }
             
             .skills {
-                gap: 6px;
+                gap: 8px;
             }
             
             .skill {
                 font-size: 11px;
                 padding: 4px 8px;
             }
+            
+            .section {
+                margin-bottom: 25px;
+            }
+            
+            .section h2 {
+                font-size: 16px;
+                margin-bottom: 12px;
+            }
+            
+            .section p {
+                font-size: 14px;
+            }
         }
 
+        /* Extra small screens */
         @media (max-width: 320px) {
-            .terminal-container {
+            .container {
                 padding: 15px 10px;
             }
             
             h1 {
                 font-size: 20px;
             }
+            
+            .terminal-buttons {
+                gap: 6px;
+            }
+            
+            .btn {
+                width: 10px;
+                height: 10px;
+            }
+            
+            .info-card {
+                padding: 12px;
+            }
+            
+            .link {
+                padding: 10px 12px;
+                font-size: 13px;
+            }
         }
     </style>
 </head>
 <body>
-    <div class="terminal-container">
+    <div class="container">
         <div class="terminal-header">
             <div class="terminal-buttons">
-                <div class="btn-circle btn-close"></div>
-                <div class="btn-circle btn-minimize"></div>
-                <div class="btn-circle btn-maximize"></div>
+                <div class="btn close"></div>
+                <div class="btn minimize"></div>
+                <div class="btn maximize"></div>
             </div>
             <div class="terminal-title">prateek@dev: ~</div>
         </div>
 
         <div class="prompt">whoami</div>
         <h1>Prateek Anand<span class="blinking-cursor"></span></h1>
-        <div class="role">AI Engineer | Full Stack Developer | Business Enthusiast</div>
+        <div class="role">Full Stack Developer | Code Enthusiast</div>
 
-        <!-- Bootstrap Grid for Cards -->
-        <div class="row g-3 mb-4">
-            <div class="col-12 col-md-6">
-                <div class="info-card">
-                    <h3>./contact</h3>
-                    <div class="contact-item">
-                        <span class="label">Email:</span>
-                        <a href="mailto:prateek.anand.office@gmail.com">prateek.anand.office@gmail.com</a>
-                    </div>
-                    <div class="contact-item">
-                        <span class="label">Phone:</span>
-                        <a href="tel:+919122992255">+91 9122 992255</a>
-                    </div>
-                    <div class="contact-item">
-                        <span class="label">Location:</span>
-                        <span>Patna, Bihar, IN</span>
-                    </div>
+        <div class="info-grid">
+            <div class="info-card">
+                <h3>./contact</h3>
+                <div class="contact-item">
+                    <span class="label">Email:</span>
+                    <span>prateek@example.com</span>
+                </div>
+                <div class="contact-item">
+                    <span class="label">Phone:</span>
+                    <span>+91 98765 43210</span>
+                </div>
+                <div class="contact-item">
+                    <span class="label">Location:</span>
+                    <span>Patna, Bihar, IN</span>
                 </div>
             </div>
-            <div class="col-12 col-md-6">
-                <div class="info-card">
-                    <h3>./skills</h3>
-                    <div class="skills">
-                        <span class="skill">JavaScript</span>
-                        <span class="skill">TypeScript</span>
-                        <span class="skill">Python</span>
-                        <span class="skill">React</span>
-                        <span class="skill">Node.js</span>
-                        <span class="skill">Nest.js</span>
-                        <span class="skill">Next.js</span>
-                        <span class="skill">SQL</span>
-                        <span class="skill">MongoDB</span>
-                        <span class="skill">Git</span>
-                        <span class="skill">Docker</span>
-                        <span class="skill">AWS</span>
-                        <span class="skill">LangChain</span>
-                        <span class="skill">LangGraph</span>
-                        <span class="skill">Linux</span>
-                    </div>
+
+            <div class="info-card">
+                <h3>./skills</h3>
+                <div class="skills">
+                    <span class="skill">JavaScript</span>
+                    <span class="skill">Python</span>
+                    <span class="skill">React</span>
+                    <span class="skill">Node.js</span>
+                    <span class="skill">MongoDB</span>
+                    <span class="skill">Git</span>
+                    <span class="skill">Docker</span>
+                    <span class="skill">AWS</span>
                 </div>
             </div>
         </div>
@@ -329,10 +431,11 @@
             <div class="prompt">ls -la ~/links</div>
             <h2>Connect & Explore</h2>
             <div class="links">
-                <a href="https://github.com/bizprat" class="link" target="_blank">GitHub</a>
-                <a href="http://linkedin.com/in/prateek-anand-9a194522/" class="link" target="_blank">LinkedIn</a>
-                <a href="https://blog.prateekanand.dev/" class="link" target="_blank">Blog</a>
-                <a href="mailto:prateek.anand.office@gmail.com" class="link">Email</a>
+                <a href="https://github.com/prateekanand" class="link" target="_blank">GitHub</a>
+                <a href="https://linkedin.com/in/prateekanand" class="link" target="_blank">LinkedIn</a>
+                <a href="https://prateekanand.dev/blog" class="link" target="_blank">Blog</a>
+                <a href="mailto:prateek@example.com" class="link">Email</a>
+                <a href="https://twitter.com/prateekanand" class="link" target="_blank">Twitter</a>
                 <a href="/resume.pdf" class="link" target="_blank">Resume</a>
             </div>
         </div>
