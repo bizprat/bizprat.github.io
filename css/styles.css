@@ -248,6 +248,14 @@ a {
   overflow: hidden;
 }
 
+/* Hidden until GSAP animates in — prevents flash/jank on load */
+.hero__name,
+.hero__tagline,
+.hero__cta .btn,
+.hero__scroll-hint {
+  visibility: hidden;
+}
+
 .hero__mesh {
   position: absolute;
   inset: 0;

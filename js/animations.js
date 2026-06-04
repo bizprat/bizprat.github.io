@@ -3,31 +3,39 @@
    ============================================ */
 
 document.addEventListener('DOMContentLoaded', () => {
-  // Graceful fallback if GSAP CDN fails
+  // Fallback: if GSAP CDN fails, hero elements stay hidden by CSS.
+  // Reveal them so the site isn't broken.
+  const heroSelectors = '.hero__name, .hero__tagline, .hero__cta .btn, .hero__scroll-hint';
+
   if (typeof gsap === 'undefined' || typeof ScrollTrigger === 'undefined') {
-    return; // All elements stay visible by default (CSS)
+    document.querySelectorAll(heroSelectors).forEach(el => {
+      el.style.visibility = 'visible';
+      el.style.opacity = '1';
+      el.style.transform = 'none';
+    });
+    return;
   }
 
   gsap.registerPlugin(ScrollTrigger);
 
-  // ---- Hero: set initial hidden state, then animate TO visible ----
+  // ---- Hero: hidden via CSS visibility, animate to visible with autoAlpha ----
   gsap.set('.hero__name, .hero__tagline, .hero__cta .btn, .hero__scroll-hint', {
-    opacity: 0, y: 30
+    autoAlpha: 0, y: 30
   });
 
   const heroTL = gsap.timeline({ delay: 0.3 });
   heroTL
     .to('.hero__name', {
-      opacity: 1, y: 0, duration: 0.8, ease: 'power3.out'
+      autoAlpha: 1, y: 0, duration: 0.8, ease: 'power3.out'
     })
     .to('.hero__tagline', {
-      opacity: 1, y: 0, duration: 0.6, ease: 'power3.out'
+      autoAlpha: 1, y: 0, duration: 0.6, ease: 'power3.out'
     }, '-=0.3')
     .to('.hero__cta .btn', {
-      opacity: 1, y: 0, stagger: 0.15, duration: 0.5, ease: 'power3.out'
+      autoAlpha: 1, y: 0, stagger: 0.15, duration: 0.5, ease: 'power3.out'
     }, '-=0.2')
     .to('.hero__scroll-hint', {
-      opacity: 1, y: 0, duration: 0.8
+      autoAlpha: 1, y: 0, duration: 0.8
     }, '-=0.2');
 
   // ---- Section labels & titles ----
