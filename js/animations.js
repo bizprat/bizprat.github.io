@@ -5,27 +5,35 @@
 document.addEventListener('DOMContentLoaded', () => {
   // Graceful fallback if GSAP CDN fails
   if (typeof gsap === 'undefined' || typeof ScrollTrigger === 'undefined') {
-    document.querySelectorAll('[data-animate]').forEach(el => {
-      el.style.opacity = '1';
-      el.style.transform = 'none';
-    });
-    return;
+    return; // All elements stay visible by default (CSS)
   }
 
   gsap.registerPlugin(ScrollTrigger);
+  document.body.classList.add('gsap-ready');
+
+  // Mark all GSAP-animated elements
+  document.querySelectorAll(
+    '.hero__name, .hero__tagline, .hero__cta .btn, .hero__scroll-hint, ' +
+    '.section-label, .section-title, .about__text p, .about__stat, ' +
+    '.project-card, .blog__inner, .contact__item, .footer'
+  ).forEach(el => el.classList.add('gsap-target'));
 
   // ---- Hero entrance timeline ----
   const heroTL = gsap.timeline({ delay: 0.3 });
   heroTL
+    .set('.hero__name', { autoAlpha: 1 })
     .from('.hero__name', {
       opacity: 0, y: 30, duration: 0.8, ease: 'power3.out'
     })
+    .set('.hero__tagline', { autoAlpha: 1 }, '-=0.3')
     .from('.hero__tagline', {
       opacity: 0, y: 20, duration: 0.6, ease: 'power3.out'
     }, '-=0.3')
+    .set('.hero__cta .btn', { autoAlpha: 1 }, '-=0.2')
     .from('.hero__cta .btn', {
       opacity: 0, y: 20, stagger: 0.15, duration: 0.5, ease: 'power3.out'
     }, '-=0.2')
+    .set('.hero__scroll-hint', { autoAlpha: 1 }, '-=0.2')
     .from('.hero__scroll-hint', {
       opacity: 0, duration: 0.8
     }, '-=0.2');

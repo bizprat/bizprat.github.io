@@ -609,11 +609,7 @@ a {
   font-family: 'JetBrains Mono', monospace;
 }
 
-/* 7. Animations (CSS-only ambient) */
-@keyframes fadeInUp {
-  from { opacity: 0; transform: translateY(20px); }
-  to   { opacity: 1; transform: translateY(0); }
-}
+/* 7. Animations */
 
 /* 8. Utilities */
 .sr-only {
