@@ -1,0 +1,41 @@
+{
+  "projects": [
+    {
+      "id": "ai-chat-app",
+      "title": "AI Chat App",
+      "description": "A real-time chat app powered by GPT-4 with streaming responses and conversation memory.",
+      "icon": "🤖",
+      "tags": ["Next.js", "OpenAI", "Tailwind"],
+      "links": {
+        "live": "https://chat.example.com",
+        "source": "https://github.com/bizprat/ai-chat-app"
+      },
+      "featured": true,
+      "order": 1
+    },
+    {
+      "id": "devtools-cli",
+      "title": "DevTools CLI",
+      "description": "A command-line toolkit for automating common developer workflows — scaffolding, linting, and deployment.",
+      "icon": "🔧",
+      "tags": ["Node.js", "TypeScript", "CLI"],
+      "links": {
+        "source": "https://github.com/bizprat/devtools-cli"
+      },
+      "featured": false,
+      "order": 2
+    },
+    {
+      "id": "price-tracker",
+      "title": "Price Tracker",
+      "description": "Tracks product prices across e-commerce sites and sends alerts when prices drop below your target.",
+      "icon": "💡",
+      "tags": ["Python", "AWS", "MongoDB"],
+      "links": {
+        "live": "https://prices.example.com"
+      },
+      "featured": true,
+      "order": 3
+    }
+  ]
+}
