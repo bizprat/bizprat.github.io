@@ -10,20 +10,24 @@ document.addEventListener('DOMContentLoaded', () => {
 
   gsap.registerPlugin(ScrollTrigger);
 
-  // ---- Hero entrance timeline ----
+  // ---- Hero: set initial hidden state, then animate TO visible ----
+  gsap.set('.hero__name, .hero__tagline, .hero__cta .btn, .hero__scroll-hint', {
+    opacity: 0, y: 30
+  });
+
   const heroTL = gsap.timeline({ delay: 0.3 });
   heroTL
-    .from('.hero__name', {
-      opacity: 0, y: 30, duration: 0.8, ease: 'power3.out'
+    .to('.hero__name', {
+      opacity: 1, y: 0, duration: 0.8, ease: 'power3.out'
     })
-    .from('.hero__tagline', {
-      opacity: 0, y: 20, duration: 0.6, ease: 'power3.out'
+    .to('.hero__tagline', {
+      opacity: 1, y: 0, duration: 0.6, ease: 'power3.out'
     }, '-=0.3')
-    .from('.hero__cta .btn', {
-      opacity: 0, y: 20, stagger: 0.15, duration: 0.5, ease: 'power3.out'
+    .to('.hero__cta .btn', {
+      opacity: 1, y: 0, stagger: 0.15, duration: 0.5, ease: 'power3.out'
     }, '-=0.2')
-    .from('.hero__scroll-hint', {
-      opacity: 0, duration: 0.8
+    .to('.hero__scroll-hint', {
+      opacity: 1, y: 0, duration: 0.8
     }, '-=0.2');
 
   // ---- Section labels & titles ----
